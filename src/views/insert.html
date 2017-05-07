@@ -1,0 +1,57 @@
+<div class="header_"><h5>Inscription</h5></div>
+<h3 style="margin-top: 1em;">Veuillez choisir votre seance :</h3>
+<div id="_h3" class="title-line"></div>
+<div ng-hide="inscrit"class="inscription" style="padding: 2em; margin: 0 auto;">
+    <br>
+    <br>
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input ng-model="inscription.fname" id="first_name" type="text" class="validate"> <label for="first_name">Prénom</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input ng-model="inscription.lname" id="last_name" type="text" class="validate"> <label for="last_name">Nom de famille</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input ng-model="inscription.email" id="email" type="email" class="validate"> <label for="email" data-error="wrong" data-success="right">Adresse email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <label>Veuillez choisir votre cours ici :</label>
+                    <br>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="input-field col s12">
+<!--
+                    <select ng-model="cour" ng-options="obj.id as obj.name for obj in cours.data" class="browser-default">
+                    </select>
+-->
+                    <select ng-model="inscription.cour" class="browser-default">
+                        <option value="">...</option>
+                        <option value="Dimanche 21 mai 2017 de 14h à 16h">Dimanche 21 mai 2017 de 14h à 16h</option>
+                        <option value="Dimanche 21 mai 2017 de 14h à 16h">Dimanche 28 mai 2017 de 14h à 16h</option>
+                        <option value="Dimanche 21 mai 2017 de 14h à 16h">Dimanche 4 Juin 2017 de 14h à 16h</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <button class="btn waves-effect waves-light" ng-disabled="(inscription.fname&&inscription.lname&&inscription.email&&inscription.cour) ?  false : true" ng-click="submitIns()" type="submit" name="action">Soumettre
+            </button>
+        </form>
+    </div>
+</div>
+<div ng-show="inscrit" class="successul" style="width: 500px; padding: 2em; margin: 0 auto; text-align: center;">
+    <p>Merci ! Nous allons vous contacter d'ici peu.</p>
+    <img width="230" src="http://www.freeiconspng.com/uploads/success-icon-10.png">
+</div>
+

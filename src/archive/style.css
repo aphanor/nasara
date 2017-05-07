@@ -1,0 +1,292 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,500);
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+}
+body {
+    color: #fff;
+    text-align: center;
+}
+
+.main_header {
+    background-image: url('IMG-20170227-WA0003.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 60%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+h2 {
+    color: #ee2020;
+    text-transform: uppercase;
+}
+
+h3 {
+    color: #2aa30b;
+}
+
+.enter {
+    text-transform: uppercase;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+a.enter:hover {
+    text-decoration: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+}
+
+nav.home {
+    width: 150px;
+    float: left;
+    padding: 1em;
+    border-right: 3px solid #373a47;
+    height: 100%;
+    padding: 1em;
+}
+
+nav img {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.body-right {
+    color: #000;
+    margin: 1em;
+}
+
+article {
+    padding: 1em;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.button {
+  display: flex;
+  overflow: hidden;
+  width: 200px;
+
+  margin: 10px auto;
+  padding: 12px 12px;
+
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none !important;
+  text-transform: none;
+  text-transform: capitalize;
+
+  color: #fff;
+  border: 0 none;
+  border-radius: 4px;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  appearance:         none;
+ 
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 160px;
+}
+
+.button:hover {
+    transition: all 60ms ease;
+    opacity: .85;
+}
+
+.button:active {
+    transition: all 60ms ease;
+    opacity: .75;
+}
+
+.button:focus {
+    outline: 1px dotted #959595;
+    outline-offset: -4px;
+}
+
+.button.-regular {
+    color: #FFF;
+    background-color: #373a47;
+}
+
+.button.-regular:hover {
+    color: #202129;
+    background-color: #e1e2e2;
+    opacity: 1;
+}
+
+div#tem {
+    margin-top: 1em;
+}
+
+#tem img {
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+#tem li {
+    font-size: 12px;
+}
+
+.left, .right {
+    float: left;
+    width: 49%;
+}
+
+.tm-left {
+    width: 10%;
+    height: 100%;
+}
+
+.tm-right {
+    width: 69%;
+    height: 100%;
+    float: left;
+    text-align: left;
+    padding-left: 2em;
+}
+
+.temoignage {
+    height: 200px;
+    margin:0 auto 1em;
+    width: 90%;
+    
+}
+
+#social {
+    text-align: right;
+    margin-right: 15px;
+}
+
+.fa {
+  padding: 8px;
+  font-size: 10px;
+  width: 12px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+fa, a {
+    -webkit-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+
+/*		Tablet Layout: 768px.
+		Gutters: 24px.
+		Outer margins: 28px.
+		Inherits styles from: Default Layout.
+-----------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8
+px      68    160    252    344    436    528    620    712    */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	
+    nav.home {display: block !important;}
+	
+}
+
+
+
+/*		Mobile Layout: 320px.
+		Gutters: 24px.
+		Outer margins: 34px.
+		Inherits styles from: Default Layout.
+---------------------------------------------
+cols    1     2      3
+px      68    160    252    */
+
+@media only screen and (max-width: 767px) {
+	
+	nav.home {display: none !important;}
+	.left, .right {float: left; width: 100%;}
+	footer {bottom: 20%;}
+	h2 {font-size: 200% !important;}
+}
+
+
+
+/*		Wide Mobile Layout: 480px.
+		Gutters: 24px.
+		Outer margins: 22px.
+		Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5
+px      68    160    252    344    436    */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+    nav.home {display: none !important;}
+    .left, .right {float: left; width: 100%;}
+    footer {bottom: 15%;}
+    h2 {font-size: 200% !important;}
+    
+}
