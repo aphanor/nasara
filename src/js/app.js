@@ -2,11 +2,11 @@ var nas = angular.module('nasara', ['angular-loading-bar', 'ngAnimate', 'ngRoute
 
 nas.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {   
 
-    $routeProvider.when('/about', {
-        templateUrl: 'views/about.html',
+    $routeProvider.when('/a-propos', {
+        templateUrl: 'views/a-propos.html',
         controller: 'sa'
     }).when('/programmation', {
-        templateUrl: 'views/prog.html',
+        templateUrl: 'views/programmation.html',
         controller: 'sa'
     }).when('/inscription', {
         templateUrl: 'views/insert.html',
@@ -14,23 +14,20 @@ nas.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     }).when('/forum', {
         templateUrl: 'views/forum.html',
         controller: 'sa'
-    }).when('/biblioteque', {
-        templateUrl: 'views/biblioteque.html',
+    }).when('/bibliotheque', {
+        templateUrl: 'views/bibliotheque.html',
         controller: 'sa'
     }).when('/gallerie', {
-        templateUrl: 'views/gallery.html',
+        templateUrl: 'views/gallerie.html',
         controller: 'sa'
-    }).when('/partner', {
-        templateUrl: 'views/partner.html',
+    }).when('/partenaires', {
+        templateUrl: 'views/partenaire.html',
         controller: 'sa'
     }).when('/contact', {
         templateUrl: 'views/contact.html',
         controller: 'sa'
-    }).when('/main.html', {
-        templateUrl: 'views/about.html',
-        controller: 'sa'
     }).when('/', {
-        templateUrl: 'views/home.html',
+        templateUrl: 'views/accueil.html',
         controller: 'sa'
     });
     //$locationProvider.html5Mode(true).hashPrefix('!');
