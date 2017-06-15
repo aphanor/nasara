@@ -6,11 +6,11 @@
     
         <title>École Nasara</title>
         
-        <meta name="keywords" content="Nasara, afrocentrik, afrocentrique, ecole montréal, nasara, afro, ecole Nasara, école Nasara, créole, kreyol" />
+        <meta name="keywords" content="Ecolenasara.com, Nasara, afrocentrik, afrocentrique, ecole montréal, nasara, afro, ecole Nasara, école Nasara, créole, kreyol" />
     	<meta name="description" content="Bienvenue à l'école NASARA. Vous souhaitez découvrir l&#39;Afrique, son histoire, sa culture, des premiers hommes jusqu’à nos jours?" />
     	<meta name="robots" content="index,follow" />
     
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
@@ -26,6 +26,8 @@
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <link rel="stylesheet" href="css/layout-simple.css" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/menu_sideslide.css" />
         <!-- End CSS dependencies -->
         
         <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/android-icon-36x36.png">
@@ -148,6 +150,7 @@
             background-attachment: fixed;
             -webkit-font-smoothing: antialiased !important;
             -moz-osx-font-smoothing: grayscale !important;
+            overflow-x: hidden;
         }
         .content {margin: 0 auto; padding: 0;}
         #sidebar-top #logo {
@@ -452,6 +455,8 @@
         }
                 
         #mainer {margin-top: 350px; background-color: #f7f7f7;}
+        #open-but {cursor: pointer; padding: 10px;}
+        i.material-icons {font-size: 25px;}
         
         .carousel {background-color: #333; height: 250px;}
         /*		Tablet Layout: 768px.
@@ -464,8 +469,16 @@
         
         @media only screen and (min-width: 768px) and (max-width: 991px) {
         	
-            .left {display: none; transition: ease-out;}
-        	
+            .left, .header_ {display: none; transition: ease-out;}
+            #mainer {width: 100%; margin: 100px 0 0 0;}
+            .title-line {width: 330px;}
+            h2 {font-size: 26px !important;}
+            h3 {font-size: 22px; text-align: center;}
+            #mainer img {width: 250px;}
+            body {background-attachment: initial;}
+            nav.menu {background-color: #373a47;}
+            .icon-list a {padding: 0 0 0 1em;}
+        	ol li { margin: 0; padding-top: 1em;}
         }
         
         
@@ -480,7 +493,16 @@
         
         @media only screen and (max-width: 767px) {
         	
-        	.left {display: none; transition: ease-out;}
+        	.left, .header_ {display: none; transition: ease-out;}
+        	#mainer {width: 100%; margin: 100px 0 0 0;}
+        	.title-line {width: 330px;}
+            h2 {font-size: 26px !important;}
+            h3 {font-size: 22px; text-align: center;}
+        	#mainer img {width: 250px;}
+        	body {background-attachment: initial;}
+        	nav.menu {background-color: #373a47;}
+        	.icon-list a {padding: 0 0 0 1em;}
+        	ol li { margin: 0; padding-top: 1em;}
         }
         
         
@@ -495,12 +517,39 @@
         
         @media only screen and (min-width: 480px) and (max-width: 767px) {
         	
-            .left {display: none; transition: ease-out;}
-            
+            .left, .header_ {display: none; transition: ease-out;}
+            #mainer {width: 100%; margin: 100px 0 0 0;}
+            .title-line {width: 330px;}
+            h2 {font-size: 26px !important;}
+            h3 {font-size: 22px; text-align: center;}
+            #mainer img {width: 250px;}
+            body {background-attachment: initial;}
+            nav.menu {background-color: #373a47;}
+            .icon-list a {padding: 0 0 0 1em;}
+            ol li { margin: 0; padding-top: 1em;}  
         }
         </style>
     </head>   
-    <body>
+    <body ng-controller="sa">
+        <div id="nav_mobile">
+            <i class="material-icons" id="open-but">dehaze</i>
+        </div>
+        <div class="menu-wrap">
+    		<nav class="menu">
+    			<div class="icon-list">
+    				 <a onclick="toggleMenu()" ng-href="#!/"><span>Accueil</span></a>
+    				 <a onclick="toggleMenu()" ng-href="#!/a-propos"><span>A Propos</span></a>
+    				 <a onclick="toggleMenu()" ng-href="#!/programmation"><span>Programmation</span></a>
+    				 <a onclick="toggleMenu()" ng-href="#!/inscription"><span>Inscription</span></a>
+    				 <a onclick="toggleMenu()" ng-href="#!/gallerie"><span>Gallerie</span></a>
+    				 <a onclick="toggleMenu()" ng-href="#!/forum"><span>Forum</span></a>
+    				 <a onclick="toggleMenu()" ng-href="#!/partenaires"><span>Partenaires</span></a>
+    				 <a onclick="toggleMenu()" ng-href="#!/bibliotheque"><span>Bibliothèque</span></a>
+    				 <a onclick="toggleMenu()" ng-href="#!/contact"><span>Contact</span></a>
+    			</div>
+    		</nav>
+    		<button class="close-button" id="close-button">Close Menu</button>
+    	</div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2 left">
@@ -561,5 +610,56 @@
                 </div>
             </div>
         </div>
+        <script>
+            var bodyEl = document.body,
+		content = document.querySelector( '.content-wrap' ),
+		nav = document.querySelector('.icon-list a'),
+		openbtn = document.getElementById( 'open-but' ),
+		closebtn = document.getElementById( 'close-button' ),
+		article = document.getElementById('maino'),
+		isOpen = false;
+
+	function init() {
+		initEvents();
+	}
+
+	function initEvents() {
+		//openbtn.addEventListener( 'mouseover', toggleMenu );
+		openbtn.addEventListener( 'click', toggleMenu );
+		if( closebtn ) {
+			closebtn.addEventListener( 'click', toggleMenu );
+		}
+
+		// close the menu element if the target it´s not the menu element or one of its descendants..
+		content.addEventListener( 'click', function(ev) {
+			var target = ev.target;
+			if( isOpen && target !== openbtn ) {
+				toggleMenu();
+			}
+		});
+		
+		nav.addEventListener( 'click', function(ev) {
+			var target = ev.target;
+			if( isOpen && target !== openbtn ) {
+				toggleMenu();
+			}
+		});
+		
+		
+	}
+
+	function toggleMenu() {
+		if( isOpen ) {
+			classie.remove( bodyEl, 'show-menu' );
+		}
+		else {
+			classie.add( bodyEl, 'show-menu' );
+		}
+		isOpen = !isOpen;
+	}
+
+	init();
+        </script>
+        <script src="js/classie.js"></script>
     </body>
 </html>

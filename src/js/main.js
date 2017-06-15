@@ -12,10 +12,10 @@
 
 	var bodyEl = document.body,
 		content = document.querySelector( '.content-wrap' ),
-		nav = document.querySelector('.home'),
-		openbtn = document.getElementById( 'open-button' ),
+		nav = document.querySelector('.icon-list a'),
+		openbtn = document.getElementById( 'open-but' ),
 		closebtn = document.getElementById( 'close-button' ),
-		article = document.getElementById('mainer'),
+		article = document.getElementById('maino'),
 		isOpen = false;
 
 	function init() {
@@ -23,9 +23,8 @@
 	}
 
 	function initEvents() {
-		openbtn.addEventListener( 'mouseover', toggleMenu );
-		nav.addEventListener( 'mouseover', toggleMenu );
-		article.addEventListener( 'click', toggleMenu );
+		//openbtn.addEventListener( 'mouseover', toggleMenu );
+		openbtn.addEventListener( 'click', toggleMenu );
 		if( closebtn ) {
 			closebtn.addEventListener( 'click', toggleMenu );
 		}
@@ -36,7 +35,16 @@
 			if( isOpen && target !== openbtn ) {
 				toggleMenu();
 			}
-		} );
+		});
+		
+		nav.addEventListener( 'click', function(ev) {
+			var target = ev.target;
+			if( isOpen && target !== openbtn ) {
+				toggleMenu();
+			}
+		});
+		
+		
 	}
 
 	function toggleMenu() {

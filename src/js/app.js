@@ -41,7 +41,7 @@ nas.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     
 }])
 
-nas.controller("sa", ['$scope', '$http', function($scope, $http) {
+nas.controller("sa", ['$scope', '$http', '$timeout', '$q', '$log', function($scope, $http, $timeout, $q, $log) {
     
 /*
     $scope.cours = {

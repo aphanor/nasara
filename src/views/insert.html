@@ -30,15 +30,35 @@
             
             <div class="row">
                 <div class="input-field col s12">
+                    <md-content class="md-padding">
+    <form ng-submit="$event.preventDefault()">
+                    <md-autocomplete
+                        ng-disabled="sa.isDisabled"
+                        md-no-cache="sa.noCache"
+                        md-selected-item="sa.selectedItem"
+                        md-search-text-change="sa.searchTextChange(sa.searchText)"
+                        md-search-text="sa.searchText"
+                        md-selected-item-change="sa.selectedItemChange(item)"
+                        md-items="item in sa.querySearch(sa.searchText)"
+                        md-item-text="item.display"
+                        md-min-length="0"
+                    placeholder="What is your favorite US state?">
+                        <md-item-template>
+                        <span md-highlight-text="sa.searchText" md-highlight-flags="^i">{{item.display}}</span>
+                        </md-item-template>
+                        <md-not-found>
+                        Pas de cours pour cette date.
+                        </md-not-found>
+                    </md-autocomplete>
+    </form>
+                    </md-content>
 <!--
                     <select ng-model="cour" ng-options="obj.id as obj.name for obj in cours.data" class="browser-default">
                     </select>
 -->
                     <select ng-model="inscription.cour" class="browser-default">
                         <option value="">...</option>
-                        <option value="Dimanche 21 mai 2017 de 14h à 16h">Dimanche 21 mai 2017 de 14h à 16h</option>
-                        <option value="Dimanche 21 mai 2017 de 14h à 16h">Dimanche 28 mai 2017 de 14h à 16h</option>
-                        <option value="Dimanche 21 mai 2017 de 14h à 16h">Dimanche 4 Juin 2017 de 14h à 16h</option>
+                        <option value="SSamedi 12 Août 2017 de 16h à 18h">Samedi 12 Août 2017 de 16h à 18h</option>
                     </select>
                 </div>
             </div>
