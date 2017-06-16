@@ -18,7 +18,6 @@
         <!-- CSS dependencies -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel='stylesheet' href="//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css" type='text/css' media='all'>
-        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.1.0/material.indigo-pink.min.css" type="text/css">
         <!-- Materialize CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
         <!-- Latest compiled and minified CSS -->
@@ -254,7 +253,6 @@
         
         article {
             padding: 1em;
-            overflow-y: scroll;
             height: 100%;
         }
         
@@ -459,6 +457,12 @@
         i.material-icons {font-size: 25px;}
         
         .carousel {background-color: #333; height: 250px;}
+        
+        #MyGMaps {width:570px;height:400px;margin: 0 auto;}
+        
+        button:focus {background: none;}
+        
+        img.partns {height: 110px;}
         /*		Tablet Layout: 768px.
         		Gutters: 24px.
         		Outer margins: 28px.
@@ -474,11 +478,13 @@
             .title-line {width: 330px;}
             h2 {font-size: 26px !important;}
             h3 {font-size: 22px; text-align: center;}
-            #mainer img {width: 250px;}
+            #mainer img.about_us {width: 250px;}
             body {background-attachment: initial;}
             nav.menu {background-color: #373a47;}
             .icon-list a {padding: 0 0 0 1em;}
         	ol li { margin: 0; padding-top: 1em;}
+            .col-md-10.right.content{width: 100%; height: 100%;}
+            #MyGMaps {width:700px;height:600px;margin: 0 auto;}
         }
         
         
@@ -498,11 +504,15 @@
         	.title-line {width: 330px;}
             h2 {font-size: 26px !important;}
             h3 {font-size: 22px; text-align: center;}
-        	#mainer img {width: 250px;}
+        	#mainer img.about_us {width: 250px;}
         	body {background-attachment: initial;}
         	nav.menu {background-color: #373a47;}
         	.icon-list a {padding: 0 0 0 1em;}
         	ol li { margin: 0; padding-top: 1em;}
+            .col-md-10.right.content{width: 100%; height: 100%;}
+            #MyGMaps {width:300px;height:200px;margin: 0 auto;}
+            img.partns {height: 60px;}
+            .col-4 {width: 300px;}
         }
         
         
@@ -522,11 +532,15 @@
             .title-line {width: 330px;}
             h2 {font-size: 26px !important;}
             h3 {font-size: 22px; text-align: center;}
-            #mainer img {width: 250px;}
+            #mainer img.about_us {width: 250px;}
             body {background-attachment: initial;}
             nav.menu {background-color: #373a47;}
             .icon-list a {padding: 0 0 0 1em;}
-            ol li { margin: 0; padding-top: 1em;}  
+            ol li { margin: 0; padding-top: 1em;}
+            .col-md-10.right.content{width: 100%; height: 100%;}
+            #MyGMaps {width:400px;height:300px;margin: 0 auto;}
+            img.partns {height: 80px;}
+            .col-4 {width: 550px;}
         }
         </style>
     </head>   
@@ -611,54 +625,56 @@
             </div>
         </div>
         <script>
-            var bodyEl = document.body,
-		content = document.querySelector( '.content-wrap' ),
-		nav = document.querySelector('.icon-list a'),
-		openbtn = document.getElementById( 'open-but' ),
-		closebtn = document.getElementById( 'close-button' ),
-		article = document.getElementById('maino'),
-		isOpen = false;
+        var bodyEl = document.body,
+    		content = document.querySelector( '.content-wrap' ),
+    		nav = document.querySelector('.icon-list a'),
+    		openbtn = document.getElementById( 'open-but' ),
+    		closebtn = document.getElementById( 'close-button' ),
+    		article = document.getElementById('maino'),
+    		isOpen = false;
 
-	function init() {
-		initEvents();
-	}
+    	function init() {
+    		initEvents();
+    	}
 
-	function initEvents() {
-		//openbtn.addEventListener( 'mouseover', toggleMenu );
-		openbtn.addEventListener( 'click', toggleMenu );
-		if( closebtn ) {
-			closebtn.addEventListener( 'click', toggleMenu );
-		}
+    	function initEvents() {
+    		//openbtn.addEventListener( 'mouseover', toggleMenu );
+    		openbtn.addEventListener( 'click', toggleMenu );
+    		if( closebtn ) {
+    			closebtn.addEventListener( 'click', toggleMenu );
+    		}
 
-		// close the menu element if the target it´s not the menu element or one of its descendants..
-		content.addEventListener( 'click', function(ev) {
-			var target = ev.target;
-			if( isOpen && target !== openbtn ) {
-				toggleMenu();
-			}
-		});
-		
-		nav.addEventListener( 'click', function(ev) {
-			var target = ev.target;
-			if( isOpen && target !== openbtn ) {
-				toggleMenu();
-			}
-		});
-		
-		
-	}
+    		// close the menu element if the target it´s not the menu element or one of its descendants..
+    		content.addEventListener( 'click', function(ev) {
+    			var target = ev.target;
+    			if( isOpen && target !== openbtn ) {
+    				toggleMenu();
+    			}
+    		});
+    		
+    		nav.addEventListener( 'click', function(ev) {
+    			var target = ev.target;
+    			if( isOpen && target !== openbtn ) {
+    				toggleMenu();
+    			}
+    		});
+    		
+    		
+    	}
 
-	function toggleMenu() {
-		if( isOpen ) {
-			classie.remove( bodyEl, 'show-menu' );
-		}
-		else {
-			classie.add( bodyEl, 'show-menu' );
-		}
-		isOpen = !isOpen;
-	}
+    	function toggleMenu() {
+    		if( isOpen ) {
+    			classie.remove( bodyEl, 'show-menu' );
+    			$('body').css('overflow', 'auto');
+    		}
+    		else {
+    			classie.add( bodyEl, 'show-menu' );
+    			$('body').css('overflow', 'hidden');
+    		}
+    		isOpen = !isOpen;
+    	}
 
-	init();
+    	init();
         </script>
         <script src="js/classie.js"></script>
     </body>
