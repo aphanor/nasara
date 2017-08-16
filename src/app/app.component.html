@@ -1,0 +1,84 @@
+<ng2-slim-loading-bar [color]="'#29d'"></ng2-slim-loading-bar>
+<!-- Javascript dependencies -->
+<script src="js/modernizr.custom.js"></script>
+<script src="js/image_lightbox.js"></script>
+<div id="nav_mobile">
+	<i class="material-icons" id="open-but">dehaze</i>
+</div>
+<div class="menu-wrap">
+	<nav class="menu">
+		<div class="icon-list">
+			<a class="nav1" onclick="toggleMenu()" routerLink="/" href="#"><span>Accueil</span></a>
+			<a class="nav2" onclick="toggleMenu()" routerLink="/a-propos" href="#"><span>A Propos</span></a>
+			<a class="nav3" onclick="toggleMenu()" routerLink="/programmation" href="#"><span>Programmation</span></a>
+			<a class="nav4" onclick="toggleMenu()" routerLink="/inscription" href="#"><span>Inscription</span></a>
+			<a class="nav5" onclick="toggleMenu()" routerLink="/gallerie" href="#"><span>Gallerie</span></a>
+			<a class="nav6" onclick="toggleMenu()" routerLink="/forum" href="#"><span>Forum</span></a>
+			<a class="nav7" onclick="toggleMenu()" routerLink="/partenaires" href="#"><span>Partenaires</span></a>
+			<a class="nav8" onclick="toggleMenu()" routerLink="/bibliotheque" href="#"><span>Bibliothèque</span></a>
+			<a class="nav9" onclick="toggleMenu()" routerLink="/contact" href="#"><span>Contact</span></a>
+		</div>
+	</nav>
+	<button class="close-button" id="close-button">Close Menu</button>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col col-lg-2 left">
+			<div id="sidebar-top">
+				<div class="is-retina section" id="logo">
+					<div class="widget Header" data-version="1" id="Header1">
+						<div id="header-inner">
+							<a href="/"><img alt="Ecole Nasara" height="100px; " id="Header1_headerimg" src="assets/newlogo.jpg" style="display: block" width="150px;"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="main-menu">
+				<ul class="menu" id="menu-main-menu">
+					<li>
+						<a routerLink="/"><span>Accueil</span></a>
+					</li>
+					<li>
+						<a routerLink="/a-propos"><span>A Propos</span></a>
+					</li>
+					<li>
+						<a routerLink="/programmation"><span>Programmation</span></a>
+					</li>
+					<li>
+						<a routerLink="/inscription"><span>Inscription</span></a>
+					</li>
+					<li>
+						<a routerLink="/gallerie"><span>Gallerie</span></a>
+					</li>
+					<li>
+						<a routerLink="/forum"><span>Forum</span></a>
+					</li>
+					<li>
+						<a routerLink="/partenaires"><span>Partenaires</span></a>
+					</li>
+					<li>
+						<a routerLink="/bibliotheque"><span>Bibliothèque</span></a>
+					</li>
+					<li>
+						<a routerLink="/contact"><span>Contact</span></a>
+					</li>
+				</ul>
+			</div>
+			<div class="copycontainer">
+				<div id="social-menu">
+					<a href="https://www.facebook.com/ecolenasara/" target="_blank"><i class="fa fa-facebook"></i></a>
+					<a href="https://instagram.com/ecole_nasara" target="_blank"><i class="fa fa-instagram"></i></a>
+				</div>
+				<!-- #social-menu -->
+				<span id="copy"><a href="/" id="blogg" rel="dofollow">Nasara</a> © 2017</span>
+			</div>
+		</div>
+		<div class="col col-lg-10 right content">
+			<article id="mainer">
+				<div class="body-right">
+					<router-outlet></router-outlet>
+				</div>
+			</article>
+		</div>
+	</div>
+</div>
