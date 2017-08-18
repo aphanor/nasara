@@ -5,15 +5,14 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "preinstall": "npm install -g @angular/cli",
-    "postinstall": "ng build --prod",
+    "postinstall": "ng build",
     "build": "ng build && nodemon server.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
   "engines": {
-    "node": "6.11.1"
+    "node": "8.3.0"
   },
   "private": true,
   "dependencies": {
