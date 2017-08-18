@@ -1,10 +1,9 @@
 {
-  "name": "nasara2",
-  "version": "0.0.0",
+  "name": "ecolenasara",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
+    "start": "ng build --prod && node server.js",
     "build": "ng build && nodemon server.js",
     "test": "ng test",
     "lint": "ng lint",
