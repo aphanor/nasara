@@ -7,7 +7,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdCardModule, MdButtonModule, MdCheckboxModule, MdInputModule } from '@angular/material';
+import { MdCardModule, MdButtonModule, MdCheckboxModule, MdInputModule, MdTabsModule } from '@angular/material';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { AgmCoreModule } from '@agm/core';
 
@@ -26,10 +26,25 @@ import { NotfoundComponent } from './notfound/notfound.component';
 
 import { HttpServiceService } from './http-service.service';
 import { environment } from '../environments/environment';
+import { EnfantsComponent } from './enfants/enfants.component';
+import { AdultesComponent } from './adultes/adultes.component';
+import { TarifsComponent } from './tarifs/tarifs.component';
 
 const appRoutes: Routes = [{ 
     path: 'a-propos',
     component: AboutComponent
+  },
+  {
+    path: 'enfants',
+    component: EnfantsComponent
+  },
+  {
+    path: 'adultes',
+    component: AdultesComponent
+  },
+  {
+    path: 'tarifs',
+    component: TarifsComponent
   },
   { 
     path: 'programmation',
@@ -83,7 +98,10 @@ const appRoutes: Routes = [{
     BiblioComponent,
     ContactComponent,
     HomeComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    EnfantsComponent,
+    AdultesComponent,
+    TarifsComponent
   ],
   imports: [
     BrowserModule,
@@ -95,6 +113,7 @@ const appRoutes: Routes = [{
     MdCardModule,
     MdCheckboxModule,
     MdInputModule,
+    MdTabsModule,
     AgmCoreModule.forRoot({
       apiKey: environment.Gmaps_apikey
     }),

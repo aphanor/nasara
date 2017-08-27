@@ -57,6 +57,13 @@ body {
 	margin-bottom: 0 !important;
 }
 
+.mat-tab-label[_ngcontent-c2] {
+    min-width: 233px !important;
+}
+
+.mat-ink-bar {
+	background-color: green !important;
+}
 
 /* Normalised CSS */
 
