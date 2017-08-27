@@ -57,7 +57,7 @@ body {
 	margin-bottom: 0 !important;
 }
 
-.mat-tab-label[_ngcontent-c2] {
+.mat-tab-label {
     min-width: 233px !important;
 }
 
